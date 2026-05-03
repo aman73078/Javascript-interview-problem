@@ -59,6 +59,8 @@ Check leap year
 🔥 11. Advanced Questions
 How does JavaScript convert values in if condition?
 What is short-circuit evaluation?
+Ans. Short-circuit evaluation in JavaScript means logical operators (&&, ||) stop evaluating as soon as the result is determined.
+
 Can ternary replace all if-else?
 Performance difference between if and ternary?
 🔥 12. Tricky Interview Questions
