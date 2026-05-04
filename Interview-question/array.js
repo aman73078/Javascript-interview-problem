@@ -95,3 +95,23 @@
 
 // Array.isArray(value) checks value for being an array, if so returns true, otherwise false.
 // Please note that methods sort, reverse and splice modify the array itself.
+
+
+// 🧠 Array.from(arrayLike)
+
+// 👉 Array.from() is used to convert array-like or iterable objects into a real array
+// ⚡ 1. Convert string → array
+// Array.from("hello");
+
+// 👉 Output:
+
+// ["h", "e", "l", "l", "o"]
+
+// ⚡ 2. Convert array-like object
+// let obj = { 0: "a", 1: "b", length: 2 };
+
+// Array.from(obj);
+
+// 👉 Output:
+
+// ["a", "b"]

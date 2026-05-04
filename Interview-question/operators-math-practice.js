@@ -184,3 +184,125 @@ console.log(0.1 + 0.2 === 0.3);
 // null → 0, undefined → NaN
 // Arrays → string ([1,2] → "1,2")
 // {} behaves differently depending on position
+
+
+// LEVEL 2 – HARD COERCION QUESTIONS
+
+// 1.
+console.log([] + {} + []);
+
+// 👉 "[object Object]"
+// ➡️ [] → "", {} → "[object Object]"
+
+// 2.
+console.log({} + [] + {});
+
+// 👉 "[object Object][object Object]" (in many environments)
+// ➡️ parsing depends, but often treated as expression
+
+// 3.
+console.log([] == ![]);
+
+// 👉 true
+// ➡️ you already saw this: [] → "" → 0, false → 0
+
+// 4.
+console.log(![] + []);
+
+// 👉 "false"
+// ➡️ ![] → false, then string concat
+
+// 5.
+console.log([] + ![]);
+
+// 👉 "false"
+
+// 6.
+console.log(+[] + +[]);
+
+// 👉 0
+// ➡️ unary + converts both to 0
+
+// 7.
+console.log(+[] + {});
+
+// 👉 "0[object Object]"
+
+// 8.
+console.log([] + {} - []);
+
+// 👉 NaN
+// ➡️ "[object Object]" - "" → NaN
+
+// 9.
+console.log(true + [] + false);
+
+// 👉 "truefalse"
+
+// 10.
+console.log(true + [] + false + true);
+
+// 👉 "truefalsetrue"
+
+// 11.
+console.log([] + {} + 1);
+
+// 👉 "[object Object]1"
+
+// 12.
+console.log({} + [] + 1);
+
+// 👉 "1" or "[object Object]1" (depends on parsing)
+
+// 13.
+console.log(!!"false" == !!"true");
+
+// 👉 true
+// ➡️ both are truthy → true == true
+
+// 14.
+console.log("b" + "a" + +"a" + "a");
+
+// 👉 "baNaNa" 🍌
+// ➡️ "a" → NaN
+
+// 15.
+console.log(+true + "10");
+
+// 👉 "110"
+
+// 16.
+console.log("10" - - "10");
+
+// 👉 20
+
+// 17.
+console.log(null + undefined);
+
+// 👉 NaN
+
+// 18.
+console.log([] == 0);
+
+// 👉 true
+
+// 19.
+console.log([0] == 0);
+
+// 👉 true
+
+// 20.
+console.log([1] == true);
+
+// 👉 true
+// ➡️ [1] → "1" → 1, true → 1
+
+// 🧠 What You MUST Understand (Core Logic)
+
+// Every question follows this pipeline:
+
+// 🔁 Step-by-step thinking:
+// Operator type (+, -, ==)
+// Convert object → primitive
+// Convert to number or string
+// Apply operation
